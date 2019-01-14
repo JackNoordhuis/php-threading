@@ -26,6 +26,9 @@ class TerminationInfo {
 	/** @var string */
 	protected $message;
 
+	/** @var int */
+	protected $code;
+
 	/** @var string */
 	protected $file;
 
@@ -35,9 +38,10 @@ class TerminationInfo {
 	/** @var array */
 	protected $trace;
 
-	public function __construct(string $class, string $message, string $file, int $line, array $trace) {
+	public function __construct(string $class, string $message, int $code, string $file, int $line, array $trace) {
 		$this->class = $class;
 		$this->message = $message;
+		$this->code = $code;
 		$this->file = $file;
 		$this->line = $line;
 		$this->trace = $trace;
@@ -55,6 +59,13 @@ class TerminationInfo {
 	 */
 	public function getMessage() : string {
 		return $this->message;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getCode() : int {
+		return $this->code;
 	}
 
 	/**

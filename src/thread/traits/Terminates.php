@@ -58,7 +58,7 @@ trait Terminates {
 		if(self::$terminationTraceBuilder !== null) {
 			$trace = call_user_func(self::$terminationTraceBuilder, $e->getTrace());
 		}
-		$this->terminationInfo = new TerminationInfo(get_class($e), $e->getMessage(), $e->getFile(), $e->getLine(), $trace);
+		$this->terminationInfo = new TerminationInfo(get_class($e), $e->getMessage(), $e->getCode(), $e->getFile(), $e->getLine(), $trace);
 	}
 
 }

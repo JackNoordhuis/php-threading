@@ -24,11 +24,13 @@ declare(strict_types=1);
 namespace pocketmine;
 
 use jacknoordhuis\Autoload\ThreadedClassLoader;
+use pocketmine\thread\traits\Terminates;
 
 /**
  * This class must be extended by all custom threading classes
  */
 class Thread extends \Thread {
+	use Terminates;
 
 	/** @var \jacknoordhuis\Autoload\ThreadedClassLoader */
 	protected $classLoader;

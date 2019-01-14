@@ -19,6 +19,7 @@ declare(strict_types=1);
 namespace pocketmine\thread\traits;
 
 use function call_user_func;
+use function get_class;
 use pocketmine\thread\TerminationInfo;
 
 trait Terminates {
@@ -57,7 +58,7 @@ trait Terminates {
 		if(self::$terminationTraceBuilder !== null) {
 			$trace = call_user_func(self::$terminationTraceBuilder, $e->getTrace());
 		}
-		$this->terminationInfo = new TerminationInfo($e->getMessage(), $e->getFile(), $e->getLine(), $trace);
+		$this->terminationInfo = new TerminationInfo(get_class($e), $e->getMessage(), $e->getFile(), $e->getLine(), $trace);
 	}
 
 }

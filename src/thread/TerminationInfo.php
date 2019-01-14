@@ -21,6 +21,9 @@ namespace pocketmine\thread;
 class TerminationInfo {
 
 	/** @var string */
+	protected $class;
+
+	/** @var string */
 	protected $message;
 
 	/** @var string */
@@ -32,13 +35,20 @@ class TerminationInfo {
 	/** @var array */
 	protected $trace;
 
-	public function __construct(string $message, string $file, int $line, array $trace) {
+	public function __construct(string $class, string $message, string $file, int $line, array $trace) {
+		$this->class = $class;
 		$this->message = $message;
 		$this->file = $file;
 		$this->line = $line;
 		$this->trace = $trace;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getClass() : string {
+		return $this->class;
+	}
 
 	/**
 	 * @return string

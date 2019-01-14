@@ -34,7 +34,7 @@ class ThreadManager {
 	/** @var ThreadManager */
 	private static $instance = null;
 
-	public static function init(Logger $logger) : void {
+	public static function init() : void {
 		self::$instance = new ThreadManager();
 	}
 

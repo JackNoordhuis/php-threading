@@ -1,0 +1,25 @@
+{
+  "name": "jacknoordhuis/threading-php",
+  "authors": [
+    {
+      "name": "Jack Noordhuis",
+      "email": "daswaggamer@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-pthreads": "*",
+    "pocketmine/spl": "^0.3.2",
+    "jacknoordhuis/threaded-class-loader": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "pocketmine\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/pmmp/SPL"
+    }
+  ]
+}
